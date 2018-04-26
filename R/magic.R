@@ -6,6 +6,8 @@
 #' @param players.n Number of players
 #' @return plot
 #' @export
+#' @examples
+#' start_game(players.id.play = 1, players.n = 5)
 start_game <- function(players.id.play = 1, players.n = 5 ){
 #Function======================================================================
     setdiff.f <- function(x=c(2,2), y=c(1,1,2,2,8)){
@@ -183,11 +185,11 @@ start_game <- function(players.id.play = 1, players.n = 5 ){
  #==========================================================
 
 
-    #pic.v <- NULL
-    #for(i in 1:8){
+    pic.v <- NULL
+    for(i in 1:8){
     #  pic.v <- c(pic.v,  magick::image_resize(magick::image_read(paste0('C:/Users/Kent_Tung/Desktop/magic pic/',i,'.jpg')), "x100"))
-
-    #}
+       pic.v <- c(pic.v, magick::image_resize(magick::image_read( system.file("extdata", paste0(i, ".jpg"), package = "ABRACAWHAT"), "x100")))
+    }
     text.v <-c("Dragon","Phantom","Rainbow","Owl","Thunder","Blizzard","Fire","Medicine")
 
 
